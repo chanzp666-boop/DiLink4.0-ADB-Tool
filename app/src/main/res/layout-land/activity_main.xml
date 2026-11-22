@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.05"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADB 调试直通"
+                    android:textColor="@color/text"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="DiLink 4.0 · 跳过二维码校验 · 直达开发工具"
+                    android:textColor="@color/text_dim"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/card_bg"
+                    android:orientation="vertical"
+                    android:padding="13dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前二维码校验状态"
+                        android:textColor="@color/text_dim"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="正在读取…"
+                        android:textColor="@color/text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="verifyEnable 由系统策略服务提供"
+                        android:textColor="@color/text_dim"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_enter"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/btn_primary"
+                    android:stateListAnimator="@null"
+                    android:text="一键进入 ADB 调试界面"
+                    android:textAllCaps="false"
+                    android:textColor="#04170D"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_auto_restore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:buttonTint="@color/accent"
+                    android:checked="true"
+                    android:text="进入后 10 秒自动恢复校验（推荐）"
+                    android:textColor="@color/text_dim"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_restore"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_secondary"
+                        android:stateListAnimator="@null"
+                        android:text="恢复二维码校验"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/btn_dial"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_secondary"
+                        android:stateListAnimator="@null"
+                        android:text="打开拨号暗码"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="进入 TestTools 后，打开「Wireless adb debug switch」与「Debug mode when USB is connected」即可启用 ADB。Wi-Fi ADB 端口 5555。"
+                    android:textColor="@color/text_dim"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="执行日志"
+                android:textColor="@color/text_dim"
+                android:textSize="11sp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:scrollbars="none">
+
+                <TextView
+                    android:id="@+id/tv_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text=""
+                    android:textColor="#B9C7D6"
+                    android:textSize="11sp" />
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
